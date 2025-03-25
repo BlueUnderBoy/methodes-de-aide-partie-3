@@ -4,7 +4,8 @@
   <p style="color: red;"><%= message %></p>
 <% end %>
 
-<%= form_with(model: @movie, data: { turbo: :false }) do |form| %>
+<%= render partial: "movies/form", locals: { movie: @movie } %>
+<!-- <%= form_with(model: @movie, data: { turbo: :false }) do |form| %>
   <div>
     <%= form.label :title %>
     <%= form.text_field :title %>
@@ -23,4 +24,4 @@
   <div>
     <%= form.submit %>
   </div>
-<% end %>
+<% end %>-->
