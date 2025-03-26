@@ -12,9 +12,9 @@
 
 <div class="row">
   <% if @movies.length > 0 %>
-    <% @movies.each do |a_movie| %>
+    <% @movies.each do |movie| %>
       <div class="col-md-3">
-        <%= render partial: "movies/movie_card", locals: { movie: a_movie } %>
+        <%= render partial: "movies/movie_card", locals: { movie: movie } %>
       </div>
     <% end %>
   <% end %>
