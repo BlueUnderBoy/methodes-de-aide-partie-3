@@ -1,7 +1,7 @@
 <% if @movies.nil? %>
 <div class="card">
   <div class="card-header">
-    <i class="fa-regular fa-pen-to-square"></i>
+    <i class="fa-regular fa-pen-to-square">It is empty</i>
   </div>
 <% else %>
 <div class="card">
@@ -36,7 +36,8 @@
       </div>
       <div class="col">
         <div class="d-grid">
-          <%= link_to movie, class: "btn btn-outline-secondary", data: { turbo_method: :delete } do %>
+        <!--<a class="btn btn-outline-secondary" href="/movies/<%#=@movies.first.id%>" data-turbo-method=delete><i class="fa-regular fa-trash-can"></i></a>-->
+          <%= link_to "/movies/#{@movies.first.id}", class: "btn btn-outline-secondary", data: { turbo_method: :delete } do %>
             <i class="fa-regular fa-trash-can"></i>
           <% end %>
         </div>
