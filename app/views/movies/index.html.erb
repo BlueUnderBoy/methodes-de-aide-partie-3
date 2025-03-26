@@ -11,9 +11,11 @@
 <hr>
 
 <div class="row">
-  <% @movies.each do |movie| %>
-    <div class="col-md-3">
-      <%= render partial: "movies/movie_card", locals: { movie: movie } %>
-    </div>
+  <% if @movies.length > 0 %>
+    <% @movies.each do |movie| %>
+      <div class="col-md-3">
+        <%= render partial: "movies/movie_card", locals: { movie: movie } %>
+      </div>
+    <% end %>
   <% end %>
 </div>
