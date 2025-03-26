@@ -16,7 +16,7 @@ class MoviesController < ApplicationController
   end
 
   def show
-    
+    @movies = Movie.order(created_at: :desc)
   end
 
   def create
