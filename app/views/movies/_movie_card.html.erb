@@ -1,6 +1,9 @@
+<% if @movies.nil? %>
+
+<% else %>
 <div class="card">
   <div class="card-header">
-    <%= link_to "Movie #{movie.id}", movie %>
+    <%= link_to "Movie #{@movies.first.id}" %>
   </div>
 
   <div class="card-body">
@@ -9,28 +12,28 @@
         Title
       </dt>
       <dd>
-        <%= movie.title %>
+        <%= @movies.first.title %>
       </dd>
 
       <dt>
         Description
       </dt>
       <dd>
-        <%= movie.description %>
+        <%= @movies.first.description %>
       </dd>
     </dl>
 
     <div class="row">
       <div class="col">
         <div class="d-grid">
-          <%= link_to edit_movie_path(movie), class: "btn btn-outline-secondary" do %>
+          <%= link_to edit_movie_path(@movies), class: "btn btn-outline-secondary" do %>
             <i class="fa-regular fa-pen-to-square"></i>
           <% end %>
         </div>
       </div>
       <div class="col">
         <div class="d-grid">
-          <%= link_to movie, class: "btn btn-outline-secondary", data: { turbo_method: :delete } do %>
+          <%= link_to @movies.first, class: "btn btn-outline-secondary", data: { turbo_method: :delete } do %>
             <i class="fa-regular fa-trash-can"></i>
           <% end %>
         </div>
@@ -39,6 +42,7 @@
   </div>
 
   <div class="card-footer">
-    Last updated <%= time_ago_in_words(movie.updated_at) %> ago
+    Last updated <%= time_ago_in_words(@movies.first.updated_at) %> ago
   </div>
 </div>
+<% end %>
